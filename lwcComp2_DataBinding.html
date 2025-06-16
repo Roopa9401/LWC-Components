@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Personal Details (Data Binding)">
+        <div class="slds-m-around_medium">
+        <lightning-input type="text" label="Enter your Name" onchange={handleNameChange} value={name}></lightning-input>
+        <p>Name:{name}</p>
+        <lightning-input type="number" label="Enter your Age" onchange={handleAgeChange} value={age}></lightning-input>
+        <p>Age:{age}</p>
+        <lightning-input type="text" label="Enter your City" onchange={handleCityChange} value={city}></lightning-input>
+        <p>City:{city}</p>
+        </div>
+        <lightning-button label="Submit Information" onclick={handleSubmit} class="slds-m-around_small"></lightning-button>
+        <div class="slds-m-around_medium">
+        <template if:true={isSubmitted}>
+        <div>Hi! My name is {name}, I am from {city} and {age}years old.</div>
+        </template>
+        </div>
+    </lightning-card>
+</template>
